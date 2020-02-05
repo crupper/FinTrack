@@ -1,29 +1,30 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+
+import "bootstrap/dist/css/bootstrap.min.css";
+import './css/shards-dashboards.1.1.0.min.css';
+
+import Home from './components/Home'
+
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route
+} from "react-router-dom";
 
 let test_env = process.env.REACT_APP_TEST_VAR;
 console.log(process.env.REACT_APP_TEST_VAR);
+console.log(test_env)
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload. <br/>
-          Test: {test_env}
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <Switch>
+          <Route path="/">
+            <Home />
+          </Route>
+        </Switch>
+    </Router>
   );
 }
 
