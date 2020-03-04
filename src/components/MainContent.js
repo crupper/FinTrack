@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { Container, Row, Col } from "shards-react";
 import { Card, CardBody } from "shards-react";
+// import LinkIntegration from './LinkIntegration';
+import TestComponent from './TestComponent';
 
 class MainContent extends Component {
     render() {
@@ -16,6 +18,9 @@ class MainContent extends Component {
                     <Card small className="stats-small">
                             <CardBody className="p-0 d-flex">
                                 Test Card 1
+                                {/* <LinkIntegration /> */}
+                                <br />
+                                {/* <TestComponent /> */}
                             </CardBody>
                         </Card>
                     </Col>

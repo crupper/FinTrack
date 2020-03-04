@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
-import MainNavbar from './MainNavbar';
+import MainNavbar from './Navbar/MainNavbar';
 import MainContent from './MainContent';
 import Footer from './Footer';
 
 import { Container, Row, Col } from "shards-react";
-import MainSideBar from './MainSideBar';
+import MainSideBar from './SideBar/MainSideBar';
 
 class Home extends Component {
     render() {

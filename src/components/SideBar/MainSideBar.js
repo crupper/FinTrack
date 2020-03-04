@@ -3,7 +3,7 @@ import { Col } from "shards-react";
 import classNames from 'classnames';
 import { Navbar, NavbarBrand } from "shards-react";
 
-import moneyLogo from '../images/moneyLogo.png';
+import moneyLogo from '../../images/moneyLogo.png';
 import SideBarItems from './SideBarItems';
 
 class MainSideBar extends Component {

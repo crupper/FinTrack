@@ -1,15 +1,23 @@
 {
   "name": "fin-portfolio",
   "version": "0.1.0",
+  "proxy": "http://localhost:4000",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.4.0",
     "@testing-library/user-event": "^7.2.1",
+    "axios": "^0.19.2",
+    "body-parser": "1.18.x",
     "bootstrap": "^4.4.1",
     "classnames": "^2.2.6",
+    "cors": "^2.8.5",
+    "express": "4.16.x",
+    "moment": "2.22.x",
+    "plaid": "4.x.x",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
+    "react-plaid-link": "^1.5.1",
     "react-router-dom": "^5.1.2",
     "react-scripts": "3.3.1",
     "shards-react": "^1.0.0"
