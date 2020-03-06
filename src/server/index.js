@@ -28,6 +28,9 @@ let REACT_APP_PLAID_PRODUCTS = 'transactions'
 let REACT_APP_PLAID_COUNTRY_CODES = 'US,CA,GB,FR,ES,IE'
 let REACT_APP_PLAID_ENV = 'sandbox'
 //
+const testChaseItemID = 'K7PR4Nxgq4ivEpqWZkg4f1xVXBGo6XfV8zklA';
+const testChaseAccessToken = 'access-sandbox-c5cdf637-02e1-43b1-8ca4-a5a0fe9195b8';
+//
 
 let ACCESS_TOKEN = null;
 let PUBLIC_TOKEN = null;
@@ -122,6 +125,40 @@ app.get('/ping', function (req, res) {
     return res.send('pong');
 });
 
+
+
+
+/**
+ * Get Net worth
+ */
+app.get('/networth', (request, response, next) => {
+    //let token = request.body.access_token;
+    console.log('Access Token used to get balance: ' + ACCESS_TOKEN);
+    // Pull real-time balance information for each account associated
+    // with the Item
+    client.getBalance(testChaseAccessToken, (err, result) => { // replace with real token
+        prettyPrintResponse(result);
+        // Handle err
+        const accounts = result.accounts;
+        //prettyPrintResponse(accounts);
+        let networth = 0;
+        // let balances = accounts.data.balance;
+        let array = accounts.map((accountBalance) => {
+            if(accountBalance.type == 'depository' || accountBalance.type == 'investment'){
+                networth = networth + accountBalance.balances.current;
+            } else if(accountBalance.type == 'credit' || accountBalance.type == 'loan'){
+                networth = networth - accountBalance.balances.current;
+            }
+            
+        })
+        console.log('Calculated NW: ' + networth);
+
+        response.json({
+            "net_worth": networth
+        })
+    });
+    
+})
 
 app.listen(REACT_APP_PORT);
 

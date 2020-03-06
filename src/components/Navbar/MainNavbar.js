@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import classNames from 'classnames';
 import { Container, Navbar } from "shards-react";
-import LinkIntegration from '../LinkIntegration';
+// import LinkIntegration from '../LinkIntegration';
 
 class MainNavbar extends Component {
     classes = classNames(
