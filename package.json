@@ -12,7 +12,7 @@
     "bootstrap": "^4.4.1",
     "classnames": "^2.2.6",
     "cors": "^2.8.5",
-    "express": "4.16.x",
+    "express": "4.17.x",
     "moment": "2.22.x",
     "plaid": "4.x.x",
     "react": "^16.12.0",
